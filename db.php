@@ -1,8 +1,10 @@
 <?php
+require_once 'user.php';
+
 $dbhost = 'localhost'; // Unlikely to require changing
-$dbname = 'robinsnest'; // Modify these...
-$dbuser = 'robinsnest'; // ...variables according
-$dbpass = 'rnpassword'; // ...to your installation
+$dbname = 'test'; // Modify these...
+$dbuser = 'root'; // ...variables according
+$dbpass = ''; // ...to your installation
 $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 if ($connection->connect_error) die("Fatal Error");
@@ -20,5 +22,23 @@ function queryMysql($query)
 function createTable($name, $query)
 {
     queryMysql("CREATE TABLE IF NOT EXISTS $name($query)");
-    echo "Table '$name' created or already exists.<br>";
+    //echo "Table '$name' created or already exists.<br>";
+}
+
+function usernameIsAvailable(string $username)
+{
+    $result = queryMysql("SELECT * FROM users WHERE username='$username'");
+    return $result;
+}
+
+function createUser(User $user_data)
+{
+    if (!usernameIsAvailable($user_data->username)) {
+        echo "<span class='taken'>&nbsp;&#x2718; " .
+            "The username '$user_data->username' is taken</span>";
+        return -1;
+    }
+
+    $result = queryMysql("INSERT INTO users VALUES ('$user_data->username', '$user_data->email', '$user_data->password_hash')");
+    return $result;
 }

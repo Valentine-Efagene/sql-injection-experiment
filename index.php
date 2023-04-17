@@ -3,13 +3,26 @@ require_once 'user.php';
 require_once 'db.php';
 require_once 'injection.php';
 
+createTable(
+    'users',
+    'username VARCHAR(255) NOT NULL,
+    email VARCHAR(255),
+    password_hash VARCHAR(255),
+    PRIMARY KEY (username)',
+);
+
+// $test_user = new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74');
+// createUser($test_user);
+
+
 $users = [
-    new User('janedoe@gmail.com', 'Jane Doe', 'hwuhfeuwefuhwef89ry74'),
-    new User('janedoe@gmail.com', 'Jane Doe', 'hwuhfeuwefuhwef89ry74'),
-    new User('janedoe@gmail.com', 'Jane Doe', 'hwuhfeuwefuhwef89ry74'),
-    new User('janedoe@gmail.com', 'Jane Doe', 'hwuhfeuwefuhwef89ry74'),
-    new User('janedoe@gmail.com', 'Jane Doe', 'hwuhfeuwefuhwef89ry74'),
-    new User('janedoe@gmail.com', 'Jane Doe', 'hwuhfeuwefuhwef89ry74'),
+    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
+    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
+    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
+    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
+    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
+    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
+    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
 ];
 
 ?>
@@ -26,18 +39,18 @@ $users = [
         <h1>SQL INJECTION EXPERIMENT</h1>
         <section>
             <h2>CREATE USER</h2>
-            <form method="post" action="injection.php">
+            <form method="post" action="signup.php">
                 <label>
                     Email
-                    <input class="input" type="email" name="email" id="email" placeholder="Email">
+                    <input required class="input" type="email" name="email" id="email" placeholder="Email">
                 </label>
                 <label>
                     Username
-                    <input class="input" type="text" name="username" id="username" placeholder="Username">
+                    <input required class="input" type="text" name="username" id="username" placeholder="Username">
                 </label>
                 <label>
                     Password
-                    <input class="input" type="password" name="password" id="password" placeholder="Password">
+                    <input required class="input" type="password" name="password" id="password" placeholder="Password">
                 </label>
                 <input type="submit">
             </form>
@@ -46,7 +59,7 @@ $users = [
 
         <section>
             <h2>LOG IN</h2>
-            <form method="post" action="login.php">
+            <form method="post" action="injection.php">
                 <label>
                     Email
                     <input class="input" type="email" name="email" id="email" placeholder="Email">
