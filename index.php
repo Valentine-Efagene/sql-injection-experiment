@@ -53,7 +53,7 @@ $users = array_map("toUserObjects", $_users);
             ?></h2>
         <section>
             <h2>CREATE USER</h2>
-            <form method="post" action="signup.php">
+            <form method="post" action="sign-up.php">
                 <label>
                     Email
                     <input required class="input" type="email" name="email" id="email" placeholder="Email">
@@ -69,7 +69,7 @@ $users = array_map("toUserObjects", $_users);
                 <input class="btn" type="submit">
             </form>
 
-            <form action="session_destroy.php">
+            <form action="session-destroy.php">
                 <input class="btn--secondary" value="Clear Session" type="submit">
             </form>
         </section>
@@ -77,7 +77,8 @@ $users = array_map("toUserObjects", $_users);
 
         <section>
             <h2>LOG IN</h2>
-            <form method="post" action="injection.php">
+            <!-- <form method="post" action="sign-in.php"> -->
+            <form method="post" action="sign-in.php">
                 <label>
                     Username
                     <input class="input" type="text" name="username" id="username" placeholder="Username">
