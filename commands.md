@@ -12,7 +12,7 @@
   or
   username => 'or email='smb@gmail.com' -- '
 
-* Full Heist
+## Full Heist
 
 - Get number of fields returned
 
