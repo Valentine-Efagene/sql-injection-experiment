@@ -20,5 +20,5 @@ if (isset($_POST['password'])) {
 $password_hash = hash('ripemd128', $password);
 
 createUser(new User($username, $email, $password_hash));
-header('Location: ' . '/nedu/resource');
+header('Location: ' . '/nedu/');
 die();
