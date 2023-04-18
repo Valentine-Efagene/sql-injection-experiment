@@ -7,3 +7,7 @@
   4. Create DB test, or setup with db.php (create a DB to match the name you provide in db.php)
   5. Create table users in the DB created in step 4
   6. Happy hunting!
+
+- References
+  1. https://betterprogramming.pub/learn-about-sql-injection-attacks-ce9f8940a5ab
+  2. https://www.youtube.com/watch?v=WwfsQ2wqPTo
