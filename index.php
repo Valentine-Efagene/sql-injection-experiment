@@ -1,7 +1,17 @@
 <?php
 require_once 'user.php';
 require_once 'db.php';
-require_once 'injection.php';
+
+$current_email = null;
+$current_username = null;
+
+if (isset($_SESSION['email'])) {
+    $current_email =  $_SESSION['email'];
+}
+
+if (isset($_SESSION['username'])) {
+    $current_username =  $_SESSION['username'];
+}
 
 createTable(
     'users',
@@ -35,7 +45,12 @@ $users = array_map("toUserObjects", $_users);
 
 <body>
     <div class="container">
+
         <h1>SQL INJECTION EXPERIMENT</h1>
+        <h2>Current User:
+            <?php
+            echo $current_email;
+            ?></h2>
         <section>
             <h2>CREATE USER</h2>
             <form method="post" action="signup.php">
@@ -60,8 +75,8 @@ $users = array_map("toUserObjects", $_users);
             <h2>LOG IN</h2>
             <form method="post" action="injection.php">
                 <label>
-                    Email
-                    <input class="input" type="email" name="email" id="email" placeholder="Email">
+                    Username
+                    <input class="input" type="text" name="username" id="username" placeholder="Username">
                 </label>
                 <label>
                     Password
