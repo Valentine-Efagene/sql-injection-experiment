@@ -30,5 +30,5 @@ if ($result->num_rows == 0) {
     $_SESSION['username'] = $username;
 }
 
-header('Location: ' . 'http://localhost/nedu/index.php');
+header('Location: ' . '/nedu/resource');
 die();

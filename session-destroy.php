@@ -2,5 +2,5 @@
 session_start();
 session_destroy();
 
-header('Location: ' . 'http://localhost/nedu/index.php');
+header('Location: ' . '/nedu/resource');
 die();
