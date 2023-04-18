@@ -47,10 +47,15 @@ $users = array_map("toUserObjects", $_users);
     <div class="container">
 
         <h1>SQL INJECTION EXPERIMENT</h1>
-        <h2>Current User:
-            <?php
-            echo $current_email;
-            ?></h2>
+        <div class="profile">
+            <h2>Current User:</h2>
+            <p>Username: <?php
+                            echo $current_username;
+                            ?></p>
+            <p>Email: <?php
+                        echo $current_email;
+                        ?></p>
+        </div>
         <section>
             <h2>CREATE USER</h2>
             <form method="post" action="sign-up.php">

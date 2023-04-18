@@ -58,6 +58,16 @@ table {
   width: fit-content;
 }
 
+.profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.profile > * {
+  margin: auto;
+}
+
 .btn--secondary {
   background-color: #ffffff;
   color: #000000;
