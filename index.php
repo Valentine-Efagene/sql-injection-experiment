@@ -66,7 +66,11 @@ $users = array_map("toUserObjects", $_users);
                     Password
                     <input required class="input" type="password" name="password" id="password" placeholder="Password">
                 </label>
-                <input type="submit">
+                <input class="btn" type="submit">
+            </form>
+
+            <form action="session_destroy.php">
+                <input class="btn--secondary" value="Clear Session" type="submit">
             </form>
         </section>
         <hr>
@@ -82,7 +86,7 @@ $users = array_map("toUserObjects", $_users);
                     Password
                     <input class="input" type="text" name="password" id="password" placeholder="Password">
                 </label>
-                <input type="submit">
+                <input class="btn" type="submit">
             </form>
         </section>
         <hr>

@@ -17,14 +17,14 @@ $query = "SELECT email FROM users WHERE username='$username' AND password_hash='
 //die($query);
 
 $result = queryMysql($query);
-// 'or '1'='1' -- '
 
 if ($result->num_rows == 0) {
     $error = "Invalid login attempt";
     die($error);
 } else {
-    die('In');
     $user = $result->fetch_assoc();
+    //$user = $result->fetch_all();
+    //die(json_encode($user));
     $email = $user['email'];
     $_SESSION['username'] = $username;
     $_SESSION['email'] = $email;
