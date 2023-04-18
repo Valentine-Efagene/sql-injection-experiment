@@ -11,20 +11,19 @@ createTable(
     PRIMARY KEY (username)',
 );
 
-// $test_user = new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74');
-// createUser($test_user);
+function toUserObjects($user_assoc_array)
+{
+    return new User(
+        $user_assoc_array['username'],
+        $user_assoc_array['email'],
+        $user_assoc_array['password_hash'],
+    );
+}
 
+$result = getAllUsers();
+$_users = $result->fetch_all(MYSQLI_ASSOC);
 
-$users = [
-    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
-    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
-    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
-    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
-    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
-    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
-    new User('JaneDoe', 'janedoe@gmail.com', 'hwuhfeuwefuhwef89ry74'),
-];
-
+$users = array_map("toUserObjects", $_users);
 ?>
 
 <html>
@@ -80,7 +79,7 @@ $users = [
                     <tr>
                         <th>Email</th>
                         <th>Username</th>
-                        <th>Password</th>
+                        <th>Password Hash</th>
                     </tr>
                 </thead>
                 <tbody>

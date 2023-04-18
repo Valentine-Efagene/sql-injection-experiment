@@ -42,3 +42,9 @@ function createUser(User $user_data)
     $result = queryMysql("INSERT INTO users VALUES ('$user_data->username', '$user_data->email', '$user_data->password_hash')");
     return $result;
 }
+
+function getAllUsers()
+{
+    $result = queryMysql("SELECT * FROM users");
+    return $result;
+}
