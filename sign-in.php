@@ -22,7 +22,7 @@ if ($result->num_rows == 0) {
     die($error);
 } else {
     $user = $result->fetch_assoc();
-    die(json_encode($user));
+    //die(json_encode($user));
     $email = $user['email'];
     $_SESSION['username'] = $username;
     $_SESSION['email'] = $email;

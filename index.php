@@ -77,7 +77,6 @@ $users = array_map("toUserObjects", $_users);
 
         <section>
             <h2>LOG IN</h2>
-            <!-- <form method="post" action="sign-in.php"> -->
             <form method="post" action="sign-in.php">
                 <label>
                     Username
@@ -85,7 +84,7 @@ $users = array_map("toUserObjects", $_users);
                 </label>
                 <label>
                     Password
-                    <input class="input" type="text" name="password" id="password" placeholder="Password">
+                    <input class="input" type="password" name="password" id="password" placeholder="Password">
                 </label>
                 <input class="btn" type="submit">
             </form>
