@@ -12,13 +12,18 @@ if (isset($_POST['password'])) {
 }
 
 $password_hash = hash('ripemd128', $password);
+$query = "SELECT email FROM users WHERE username='$username' AND password_hash='$password_hash'";
 
-$result = queryMysql("SELECT email FROM users WHERE username='$username' AND password_hash='$password_hash'");
+//die($query);
+
+$result = queryMysql($query);
+// 'or '1'='1' -- '
 
 if ($result->num_rows == 0) {
     $error = "Invalid login attempt";
-    echo $error;
+    die($error);
 } else {
+    die('In');
     $user = $result->fetch_assoc();
     $email = $user['email'];
     $_SESSION['username'] = $username;

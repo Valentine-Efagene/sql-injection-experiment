@@ -80,7 +80,7 @@ $users = array_map("toUserObjects", $_users);
                 </label>
                 <label>
                     Password
-                    <input class="input" type="password" name="password" id="password" placeholder="Password">
+                    <input class="input" type="text" name="password" id="password" placeholder="Password">
                 </label>
                 <input type="submit">
             </form>
