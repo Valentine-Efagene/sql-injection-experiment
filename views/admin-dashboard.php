@@ -1,6 +1,12 @@
 <?php
-require_once 'user.php';
 require_once 'db.php';
+
+$isAdmin = isset($_SESSION['role']) && ($_SESSION['role'] == 'admin');
+
+if (!$isAdmin) {
+    header('Location: ' . '/nedu/dashboard');
+    die();
+}
 
 $current_email = null;
 $current_username = null;
@@ -13,19 +19,12 @@ if (isset($_SESSION['username'])) {
     $current_username =  $_SESSION['username'];
 }
 
-createTable(
-    'users',
-    'username VARCHAR(255) NOT NULL,
-    email VARCHAR(255),
-    password_hash VARCHAR(255),
-    PRIMARY KEY (username)',
-);
-
 function toUserObjects($user_assoc_array)
 {
     return new User(
         $user_assoc_array['username'],
         $user_assoc_array['email'],
+        $user_assoc_array['role'],
         $user_assoc_array['password_hash'],
     );
 }
@@ -65,24 +64,24 @@ $users = array_map("toUserObjects", $_users);
                     <tr>
                         <th>Email</th>
                         <th>Username</th>
-                        <th>Password Hash</th>
+                        <th>Role</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     foreach ($users as $user) {
                         echo "
-                <tr>
-                    <td>$user->email</td>
-                    <td>$user->username</td>
-                    <td>$user->password_hash</td>
-                </tr>
-                ";
+                    <tr>
+                        <td>$user->email</td>
+                        <td>$user->username</td>
+                        <td>$user->role</td>
+                    </tr>
+                    ";
                     }
                     ?>
                 </tbody>
             </table>
-        </section>
+        </section>;
     </div>
 </body>
 

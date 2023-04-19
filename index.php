@@ -11,16 +11,39 @@ switch ($request) {
 
     case '/nedu':
     case '/nedu/':
-    case '/nedu/resource':
-        require __DIR__ . '/views/resource.php';
+    case '/nedu/home':
+        require __DIR__ . '/views/dashboard.php';
+        break;
+
+    case '/nedu/store-user':
+        require __DIR__ . '/store-user.php';
         break;
 
     case '/nedu/sign-in':
         require __DIR__ . '/views/sign-in.php';
         break;
 
-    case '/nedu/sign-up':
-        require __DIR__ . '/views/sign-up.php';
+        // Pages
+
+    case '/nedu/create-user':
+        require __DIR__ . '/views/create-user.php';
+        break;
+
+    case '/nedu/dashboard':
+        require __DIR__ . '/views/dashboard.php';
+        break;
+
+    case '/nedu/admin-dashboard':
+        require __DIR__ . '/views/admin-dashboard.php';
+        break;
+
+    case '/nedu/auth':
+        require __DIR__ . '/auth.php';
+        break;
+
+    case '/nedu/session-destroy':
+    case '/nedu/session-destroy?':
+        require __DIR__ . '/session-destroy.php';
         break;
 
     default:

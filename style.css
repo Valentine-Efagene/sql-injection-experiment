@@ -116,6 +116,7 @@ label {
 table,
 td,
 th {
+  text-align: left;
   border: 1px solid #000000;
 }
 
@@ -173,4 +174,12 @@ nav form {
   width: fit-content;
   margin-left: auto;
   cursor: pointer;
+}
+
+select {
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0;
+  border: 1px solid grey;
+  background-color: #ffffff;
 }

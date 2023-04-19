@@ -22,7 +22,6 @@ function queryMysql($query)
 function createTable($name, $query)
 {
     queryMysql("CREATE TABLE IF NOT EXISTS $name($query)");
-    //echo "Table '$name' created or already exists.<br>";
 }
 
 function usernameIsAvailable(string $username)
@@ -39,7 +38,9 @@ function createUser(User $user_data)
         return -1;
     }
 
-    $result = queryMysql("INSERT INTO users VALUES ('$user_data->username', '$user_data->email', '$user_data->password_hash')");
+    $query = "INSERT INTO users VALUES ('$user_data->username', '$user_data->email', '$user_data->role', '$user_data->password_hash')";
+
+    $result = queryMysql($query);
     return $result;
 }
 

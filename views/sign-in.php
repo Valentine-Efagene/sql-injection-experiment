@@ -13,7 +13,7 @@
 
         <section>
             <h2>LOG IN</h2>
-            <form method="post" action="sign-in.php">
+            <form method="post" action="/nedu/auth">
                 <label>
                     Username
                     <input class="input" type="text" name="username" id="username" placeholder="Username">

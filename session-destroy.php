@@ -2,5 +2,5 @@
 session_start();
 session_destroy();
 
-header('Location: ' . '/nedu/resource');
+header('Location: ' . '/nedu/');
 die();
