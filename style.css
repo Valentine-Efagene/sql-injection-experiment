@@ -64,7 +64,7 @@ table {
   grid-template-columns: 1fr;
   gap: 1rem;
   overflow-x: hidden;
-  text-align: center;
+  text-align: left;
 }
 
 .profile > * {
@@ -132,9 +132,9 @@ td {
   padding: 0.5rem 1rem;
 }
 
-h2 {
+h2,
+p {
   width: 100%;
-  text-align: center;
 }
 
 nav {

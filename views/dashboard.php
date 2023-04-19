@@ -38,7 +38,7 @@ $users = array_map("toUserObjects", $_users);
 <html>
 
 <head>
-    <title>SQL Injection Experiment</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -46,7 +46,7 @@ $users = array_map("toUserObjects", $_users);
     <?php require_once 'nav.php'; ?>
     <div class="container">
 
-        <h1>SQL INJECTION EXPERIMENT</h1>
+        <h1>DASHBOARD</h1>
         <div class="profile">
             <h2>Current User:</h2>
             <p>Username: <?php
