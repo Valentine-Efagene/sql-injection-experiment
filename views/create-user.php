@@ -20,10 +20,13 @@
                     Email
                     <input required class="input" type="email" name="email" id="email" placeholder="Email">
                 </label>
-                <select name="role" id="role">
-                    <option selected value="user">User</option>
-                    <option value="admin">Admin</option>
-                </select>
+                <label>
+                    Role
+                    <select name="role" id="role">
+                        <option selected value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </label>
                 <label>
                     Password
                     <input required class="input" type="password" name="password" id="password" placeholder="Password">
