@@ -4,7 +4,7 @@ require_once 'db.php';
 $isAdmin = isset($_SESSION['role']) && ($_SESSION['role'] == 'admin');
 
 if (!$isAdmin) {
-    header('Location: ' . '/nedu/dashboard');
+    header('Location: ' . '/injection/dashboard');
     die();
 }
 
@@ -12,11 +12,11 @@ $current_email = null;
 $current_username = null;
 
 if (isset($_SESSION['email'])) {
-    $current_email =  $_SESSION['email'];
+    $current_email = $_SESSION['email'];
 }
 
 if (isset($_SESSION['username'])) {
-    $current_username =  $_SESSION['username'];
+    $current_username = $_SESSION['username'];
 }
 
 function toUserObjects($user_assoc_array)
@@ -50,11 +50,11 @@ $users = array_map("toUserObjects", $_users);
         <div class="profile">
             <h2>Current User:</h2>
             <p>Username: <?php
-                            echo $current_username;
-                            ?></p>
+            echo $current_username;
+            ?></p>
             <p>Email: <?php
-                        echo $current_email;
-                        ?></p>
+            echo $current_email;
+            ?></p>
         </div>
 
         <section>

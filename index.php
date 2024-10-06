@@ -11,40 +11,40 @@ switch ($request) {
         require __DIR__ . '/views/index.php';
         break;
 
-    case '/nedu':
-    case '/nedu/':
-    case '/nedu/home':
+    case '/injection':
+    case '/injection/':
+    case '/injection/home':
         require __DIR__ . '/views/dashboard.php';
         break;
 
-    case '/nedu/store-user':
+    case '/injection/store-user':
         require __DIR__ . '/store-user.php';
         break;
 
-    case '/nedu/sign-in':
+    case '/injection/sign-in':
         require __DIR__ . '/views/sign-in.php';
         break;
 
-        // Pages
+    // Pages
 
-    case '/nedu/create-user':
+    case '/injection/create-user':
         require __DIR__ . '/views/create-user.php';
         break;
 
-    case '/nedu/dashboard':
+    case '/injection/dashboard':
         require __DIR__ . '/views/dashboard.php';
         break;
 
-    case '/nedu/admin-dashboard':
+    case '/injection/admin-dashboard':
         require __DIR__ . '/views/admin-dashboard.php';
         break;
 
-    case '/nedu/auth':
+    case '/injection/auth':
         require __DIR__ . '/auth.php';
         break;
 
-    case '/nedu/session-destroy':
-    case '/nedu/session-destroy?':
+    case '/injection/session-destroy':
+    case '/injection/session-destroy?':
         require __DIR__ . '/session-destroy.php';
         break;
 

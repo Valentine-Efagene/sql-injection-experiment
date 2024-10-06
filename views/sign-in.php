@@ -13,7 +13,7 @@
 
         <section>
             <h2>LOG IN</h2>
-            <form method="post" action="/nedu/auth">
+            <form method="post" action="/injection/auth">
                 <label>
                     Username
                     <input class="input" type="text" name="username" id="username" placeholder="Username">

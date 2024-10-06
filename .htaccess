@@ -1,6 +1,6 @@
 RewriteEngine On
-RewriteBase /nedu/
+RewriteBase /injection/
 RewriteRule ^index\.php＄ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /nedu/index.php [L]
+RewriteRule . /injection/index.php [L]
